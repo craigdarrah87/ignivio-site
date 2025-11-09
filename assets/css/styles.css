@@ -1,0 +1,94 @@
+/* ===== IGNIVIO – HOTFIX (safe, additive) =====
+This sheet only adds/overrides small bits. Put it LAST in the cascade.
+- Mobile hero CTAs: smaller & perfectly centered (covers multiple markup variants)
+- KPI tiles: equal heights; center numbers; "5–10d" on one line; "faster time‑to‑hire" one line
+- Clients: center label inside boxes
+- Services: emoji before the 3 service headings (non‑breaking)
+=================================================== */
+
+/* ---------- MOBILE HERO CTAS (robust selectors) ---------- */
+@media (max-width: 780px){
+  /* Try common wrappers */
+  .hero-btns,
+  .hero .cta-row,
+  .hero .cta,
+  .hero-inner .actions {
+    display:flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  /* Buttons within hero — keep consistent width & center */
+  .hero-btns a, .hero-btns .button, .hero-btns .btn,
+  .hero .cta-row a, .hero .cta-row .button, .hero .cta-row .btn,
+  .hero .cta a, .hero .cta .button, .hero .cta .btn,
+  .hero-inner .actions a, .hero-inner .actions .button, .hero-inner .actions .btn {
+    width: min(88vw, 420px) !important;
+    padding: 14px 18px !important;
+    font-size: 1.05rem !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* ---------- KPIs / METRICS (alignment) ---------- */
+@media (max-width: 780px){
+  /* two-up grid if not already */
+  .metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+  .metric {
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    min-height: 180px;
+  }
+
+  .metric .num {
+    display:inline-block;
+    white-space: nowrap;     /* keep 5–10d on one line */
+    text-align:center;
+    line-height:1;
+    margin: 0 auto;
+  }
+
+  .metric p {
+    text-align:center;
+    margin-top:8px;
+  }
+
+  /* Force the 4th tile caption onto a single line for visual alignment */
+  .metrics > .metric:nth-child(4) p {
+    white-space: nowrap;
+    font-size: clamp(14px, 3.8vw, 16px);
+  }
+}
+
+/* ---------- Clients: center text in the pill boxes ---------- */
+.logo-box,
+.clients .logo-box,
+.logos .logo-box {
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+}
+
+/* ---------- Services page: emojis before the 3 service headings ---------- */
+/* Adds icons without HTML edits. If your headings have other classes, this still works. */
+.services .card h3,
+#services .card h3,
+.services h3.card-title {
+  position: relative;
+  padding-left: 1.75em;
+}
+
+/* First 3 cards get specific icons */
+.services .card:nth-of-type(1) h3::before { content: "🔥"; position:absolute; left:0; top:0; transform: translateY(0.05em); }
+.services .card:nth-of-type(2) h3::before { content: "🚀"; position:absolute; left:0; top:0; transform: translateY(0.05em); }
+.services .card:nth-of-type(3) h3::before { content: "🗺️"; position:absolute; left:0; top:0; transform: translateY(0.05em); }
+
+/* Alternate wrappers: .grid or .cards */
+.services .grid > .card:nth-child(1) h3::before,
+#services .grid > .card:nth-child(1) h3::before { content:"🔥"; position:absolute; left:0; top:0; transform: translateY(0.05em); }
+.services .grid > .card:nth-child(2) h3::before,
+#services .grid > .card:nth-child(2) h3::before { content:"🚀"; position:absolute; left:0; top:0; transform: translateY(0.05em); }
+.services .grid > .card:nth-child(3) h3::before,
+#services .grid > .card:nth-child(3) h3::before { content:"🗺️"; position:absolute; left:0; top:0; transform: translateY(0.05em); }
