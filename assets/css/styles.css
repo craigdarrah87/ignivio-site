@@ -1,0 +1,288 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('assets/fonts/Futura-Book.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+:root {
+  --bg:#000; --text:#e9e9e9; --muted:#bdbdbd; --orange:#ff751f; --card:#0a0a0a; --border:#141414; --maxw:1200px;
+}
+*{box-sizing:border-box}
+html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Futura, Arial, sans-serif; font-size:17px; line-height:1.6; }
+a { color:var(--text); text-decoration:none; } a:hover { color:var(--orange); }
+.container{max-width:var(--maxw);margin:0 auto;padding:24px}
+.header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(0,0,0,.6);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;}
+.brand{display:flex;align-items:flex-start;gap:12px}
+.brand img{width:84px;height:84px}
+.wordmark{letter-spacing:.14em;font-weight:700;text-transform:uppercase}
+.menu{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.menu a{padding:8px 12px;border-radius:999px;transition:.2s ease}
+.menu a:hover{background:#111;color:var(--orange)}
+.cta{padding:8px 12px;border-radius:999px}
+
+.hero h1{font-size:clamp(36px,6vw,64px);margin:0 0 12px}
+.hero p{max-width:800px;margin:0 auto 24px;color:var(--muted);font-size:clamp(16px,2.4vw,20px)}
+.badge{display:inline-flex;align-items:flex-start;gap:8px;border:1px solid var(--border);background:#0a0a0a;padding:8px 12px;border-radius:999px;color:var(--muted)}
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+.kicker{color:var(--orange);text-transform:uppercase;letter-spacing:.2em;font-size:12px}
+.btn-row{display:flex;gap:12px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.button{display:inline-flex;align-items:flex-start;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:#0d0d0d}
+.button:hover{border-color:var(--orange);color:var(--orange)}
+.section{margin:40px 0}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.metric{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center}
+.metric .num{font-size:36px;font-weight:800;color:var(--orange)}
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;align-items:flex-start;}
+.logo-box{width:160px;height:48px;border:1px solid var(--border);border-radius:12px;background:#0d0d0d;display:flex;align-items:flex-start;justify-content:center;color:var(--muted)}
+.roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.roles{grid-template-columns:1fr}}
+.process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:step}
+@media(max-width:1100px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative}
+.step:before{counter-increment:step;content:counter(step);position:absolute;top:12px;right:12px;font-weight:800;color:var(--orange)}
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.offers{grid-template-columns:1fr}}
+.offer .price{font-size:28px;font-weight:800;color:var(--orange)}
+blockquote.founder{font-size:18px;margin:0;padding:20px 24px;border-left:3px solid var(--orange);background:linear-gradient(90deg, rgba(255,117,31,0.08), transparent);border-radius:8px}
+small.signature{color:var(--muted);display:block;margin-top:6px}
+.footer{border-top:1px solid var(--border);margin-top:48px;padding:24px 0 80px;color:var(--muted)}
+.footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
+@media(max-width:900px){.footer .cols{grid-template-columns:1fr}}
+/* Mobile compact menu */
+@media(max-width:780px){
+  .menu{overflow-x:auto;white-space:nowrap;padding:6px 0;gap:10px}
+  .menu::-webkit-scrollbar{display:none}
+  .menu a{padding:6px 8px;font-size:14px}
+  .wordmark{font-size:14px;letter-spacing:.12em}
+  .brand img{width:84px;height:84px}
+}
+
+/* === Ignivio v7: Spark Flicker Hero (E2, S1) === */
+
+  
+.hero .hero-inner .badge{margin-bottom:16px}
+.hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+
+/* Ember field base */
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(60% 40% at 50% 0%, rgba(255,117,31,0.10), transparent 60%),
+    radial-gradient(1200px 700px at 50% 120%, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
+  z-index:0;
+}
+
+/* Spark layer (sparse, premium) */
+.spark-layer{display:none}
+@keyframes sparkDrift{
+  0%{transform: translateY(0)}
+  100%{transform: translateY(-6%)}
+}
+@keyframes sparkFlicker{
+  0%,100%{opacity:.06}
+  45%{opacity:.16}
+  55%{opacity:.10}
+}
+
+/* Mobile adjustments so hero doesn't overwhelm */
+@media(max-width:780px){
+    
+}
+
+/* Footer tagline styling */
+.footer .tagline{color:var(--muted); margin-top:8px; font-style:italic}
+
+/* Background video layer */
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+
+
+@media(max-width:780px){
+  .header .nav{padding-top:8px;padding-bottom:8px;}
+  .brand img{width:48px;height:48px}
+  .menu a{padding:4px 8px;font-size:13px}
+}
+
+.spark-layer{display:none}
+
+/* Realism overlays */
+.hero-overlays{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero-grain{position:absolute;inset:0;background-image:url('assets/img/grain.png');mix-blend-mode:soft-light;opacity:.10;animation:grainShift 2.2s steps(4) infinite}
+@keyframes grainShift{0%{transform:translate(0,0)}25%{transform:translate(-10px,6px)}50%{transform:translate(5px,-8px)}75%{transform:translate(-6px,-4px)}100%{transform:translate(0,0)}}
+.hero-haze{position:absolute;inset:auto 0 10% 0;height:40%;background:linear-gradient(180deg, transparent, rgba(0,0,0,.12), transparent);filter:blur(8px);opacity:.35;animation:hazePulse 6s ease-in-out infinite}
+@keyframes hazePulse{0%,100%{opacity:.28}50%{opacity:.42}}
+
+
+
+.brand img{width:64px;height:64px;}
+
+
+
+section{margin-top:24px;}
+
+
+
+.hero .hero-inner {
+  position: relative;
+  z-index: 3;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero .hero-inner h1,
+.hero .hero-inner h2,
+.hero .hero-inner p {
+  margin-bottom: 14px;
+  line-height: 1.18;
+}
+
+.hero .hero-btns {
+  margin-top: 18px;
+}
+
+.hero-bg video {
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.header .nav {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.brand img {
+  height: 48px;
+}
+
+section.trusted{margin-top:-1.5vh}
+
+/* --- V6 precise hero placement --- */
+.hero{
+  position:relative;
+  min-height:72vh;
+  display:flex;
+  align-items:flex-start;       /* start higher */
+  justify-content:center;
+  padding-top:11.5vh;          /* tuck text up */
+  text-align:center;
+}
+.hero .hero-inner{
+  position:relative;
+  z-index:3;
+  max-width:780px;
+  margin:0 auto;
+  padding:0 24px;
+}
+.hero .hero-inner .badge{margin-bottom:14px}
+.hero .hero-inner h1{margin-bottom:14px;line-height:1.08}
+.hero .hero-inner p{margin-bottom:14px;line-height:1.18}
+.hero .hero-btns{margin-top:18px}
+
+.hero-bg video{
+  position:absolute;top:50%;left:50%;
+  min-width:100%;min-height:100%;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  object-position:center 72%;
+  filter:brightness(0.52);
+  z-index:0;
+}
+
+.hero-bg::after{
+  content:"";
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(0,0,0,0.45) 0%,
+    rgba(0,0,0,0.22) 35%,
+    rgba(0,0,0,0.12) 55%,   /* mid = lighter so flames read behind text */
+    rgba(0,0,0,0.32) 75%,
+    rgba(0,0,0,0.75) 100%
+  );
+}
+
+/* --- Force full-bleed hero and overlay stacking --- */
+.hero{position:relative;min-height:72vh;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;object-position:center 72%;filter:brightness(0.52)}
+.hero-overlays{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero .hero-inner{position:absolute;left:50%;top:28%;transform:translateX(-50%);z-index:2;max-width:780px;width:100%;padding:0 24px;text-align:center}
+
+
+/* === MICRO POLISH: Apex Predator Rhythm === */
+
+/* Headings: tight, authoritative */
+h1, .h1 { font-weight: 800; letter-spacing: -0.02em; line-height: 1.06; margin-bottom: 12px; }
+h2, .h2 { font-weight: 800; letter-spacing: -0.01em; line-height: 1.08; margin-bottom: 10px; }
+h3, .h3 { font-weight: 700; letter-spacing: -0.005em; line-height: 1.12; margin-bottom: 8px; }
+
+/* Body: slightly condensed line-height, crisp paragraphs */
+p, .copy { line-height: 1.38; margin-bottom: 12px; }
+
+/* Badge: smaller gap, uppercase tracking tight */
+.badge { font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; font-size: 12.5px; opacity: .92; }
+
+/* Buttons: decisive */
+.button, .btn, .cta-button {
+  display:inline-block; padding:10px 18px; border-radius:999px; font-weight:800;
+  letter-spacing:.02em; text-transform:none; border:1px solid rgba(255,255,255,.22);
+}
+.button:hover, .btn:hover { transform:translateY(-1px); transition: transform .15s ease, background-color .15s ease; }
+.button + .button, .btn + .btn { margin-left:8px; }
+
+/* Grid density */
+.grid { gap: 16px; }
+.grid.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.grid.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+/* Cards: tighter internal padding */
+.card { padding:16px 16px 14px; border-radius:16px; }
+
+/* Logo presence +8% */
+.brand img { height: 52px; }
+
+/* Kicker/subtle text tone */
+.kicker { letter-spacing: .02em; text-transform:none; opacity:.9; }
+
+/* Hero: keep V6 placement but with apex spacing rhythm */
+.hero { padding-top: 12vh; }
+.hero .hero-inner h1 { margin-bottom: 10px; }
+.hero .hero-inner p { margin-bottom: 12px; }
+
+/* Section spacing: slightly denser but still premium */
+.section { padding-top: 38px; padding-bottom: 38px; }
+section.trusted { margin-top: -1vh; }
+
+/* Mobile rhythm */
+@media (max-width: 780px){
+  h1, .h1 { letter-spacing: -0.01em; line-height: 1.08; }
+  p, .copy { line-height: 1.44; }
+  .brand img { height: 46px; }
+  .grid.grid-3 { grid-template-columns: 1fr; gap: 14px; }
+  .grid.grid-2 { grid-template-columns: 1fr; gap: 14px; }
+  .button, .btn { padding:10px 16px; }
+}
+
+/* CTA GLOW */
+.button, .btn, .cta-button { transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease; }
+.button:hover, .btn:hover, .cta-button:hover {
+  box-shadow: 0 0 0 2px rgba(255,117,31,.25), 0 6px 24px rgba(255,117,31,.35), 0 2px 8px rgba(255,117,31,.25);
+  transform: translateY(-1px);
+}
+.button.primary, .btn.primary { background: #ff751f; color: #000; border-color: rgba(255,117,31,.9); }
+.button.primary:hover, .btn.primary:hover { background: #ff893f; }
+
+
+/* --- Compact single-line footer --- */
+.site-footer{padding:16px 0;border-top:1px solid rgba(255,255,255,0.06);}
+.site-footer .footer-inner{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.site-footer nav{display:flex;gap:14px;flex-wrap:wrap;opacity:.9}
+.site-footer nav a{white-space:nowrap}
+@media (max-width:720px){
+  .site-footer .footer-inner{gap:12px}
+}
