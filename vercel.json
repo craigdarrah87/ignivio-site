@@ -1,39 +1,22 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "headers": [
+  "rewrites": [
     {
-      "source": "/assets/(.*)\\.(css|js)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)\\.(png|jpg|jpeg|svg|gif|webp|ico)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)\\.(mp4|webm)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "source": "/",
+      "destination": "/index.html"
     }
   ],
   "redirects": [
     {
-      "source": "/index.html",
-      "destination": "/",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ignivio.co"
+        }
+      ],
+      "destination": "https://ignivio.co/:splat",
       "permanent": true
     }
   ]
