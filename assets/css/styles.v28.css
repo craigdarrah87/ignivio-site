@@ -554,3 +554,12 @@ footer .copyright{ color:#a8a8a8; font-size:12px }
 @media (max-width:720px){
   .site-footer .footer-inner{gap:12px}
 }
+
+
+@media (max-width: 768px){
+  .brand img{
+    height:46px;
+    width:auto;
+    filter:drop-shadow(0 6px 14px rgba(255,117,31,.22));
+  }
+}
