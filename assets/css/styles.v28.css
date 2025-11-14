@@ -563,3 +563,30 @@ footer .copyright{ color:#a8a8a8; font-size:12px }
     filter:drop-shadow(0 6px 14px rgba(255,117,31,.22));
   }
 }
+
+
+/* === v30 Mobile header: logo + menu scroll together === */
+@media (max-width: 700px){
+  .header{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .header .nav{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:nowrap;
+    width:max-content;
+  }
+  .header .nav .brand,
+  .header .nav .menu{
+    flex:0 0 auto;
+  }
+  .header .nav .menu{
+    display:inline-flex;
+    flex-wrap:nowrap;
+  }
+  .header .nav::-webkit-scrollbar{
+    display:none;
+  }
+}
