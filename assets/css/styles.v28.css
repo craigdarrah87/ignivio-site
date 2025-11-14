@@ -565,33 +565,63 @@ footer .copyright{ color:#a8a8a8; font-size:12px }
 }
 
 
-/* === v31 Tighten vertical spacing on Outcomes + Roles === */
-section.section:nth-of-type(2){ /* Trusted by section - keep as is */ }
+/* === v32 Homepage spacing + mobile hero fit === */
 
-section.section:nth-of-type(3){ /* Ignition Outcomes */
+/* Desktop & tablet: tighten Trusted by / Ignition / Roles spacing */
+main > .section:nth-of-type(2){ /* Trusted by */
   padding-top:40px;
   padding-bottom:32px;
 }
-
-section.section:nth-of-type(4){ /* Roles we Ignite */
+main > .section:nth-of-type(3){ /* Ignition Outcomes */
   padding-top:28px;
+  padding-bottom:28px;
+}
+main > .section:nth-of-type(4){ /* Roles we Ignite */
+  padding-top:24px;
   padding-bottom:40px;
 }
 
-/* Mobile tightening */
+/* Mobile: even tighter + ensure hero text + CTAs fit in first view */
 @media (max-width: 720px){
-  section.section:nth-of-type(3){
-    padding-top:28px;
-    padding-bottom:20px;
+
+  main > .section:nth-of-type(2){
+    padding-top:24px;
+    padding-bottom:18px;
   }
-  section.section:nth-of-type(4){
+  main > .section:nth-of-type(3){
+    padding-top:18px;
+    padding-bottom:18px;
+  }
+  main > .section:nth-of-type(4){
     padding-top:18px;
     padding-bottom:28px;
   }
+
   .metrics{
-    gap:12px;
+    gap:10px;
   }
   .roles{
-    gap:12px;
+    gap:10px;
+  }
+
+  /* Hero adjustments: slightly smaller heading + tighter stack */
+  .hero{
+    min-height:88vh; /* allow more space for CTAs in view */
+  }
+  .hero-inner{
+    padding-top:64px;
+    padding-bottom:40px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.2rem);
+    margin-bottom:0.75rem;
+  }
+  .hero p{
+    font-size:1rem;
+    line-height:1.45;
+    margin-bottom:0.85rem;
+  }
+  .hero .hero-btns{
+    margin-top:10px;
   }
 }
