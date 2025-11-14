@@ -335,7 +335,7 @@ input:focus, textarea:focus{ border-color:rgba(255,117,31,.7); box-shadow:0 0 0 
 /* === v27 Mobile tidy header & footer === */
 @media (max-width: 700px){
   /* Header: single-line, horizontally scrollable if needed */
-  .site-nav, .topnav, .main-nav, .navbar {
+  header nav, .site-nav, .topnav, .main-nav, .navbar {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -565,28 +565,33 @@ footer .copyright{ color:#a8a8a8; font-size:12px }
 }
 
 
-/* === v30 Mobile header: logo + menu scroll together === */
-@media (max-width: 700px){
-  .header{
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
+/* === v31 Tighten vertical spacing on Outcomes + Roles === */
+section.section:nth-of-type(2){ /* Trusted by section - keep as is */ }
+
+section.section:nth-of-type(3){ /* Ignition Outcomes */
+  padding-top:40px;
+  padding-bottom:32px;
+}
+
+section.section:nth-of-type(4){ /* Roles we Ignite */
+  padding-top:28px;
+  padding-bottom:40px;
+}
+
+/* Mobile tightening */
+@media (max-width: 720px){
+  section.section:nth-of-type(3){
+    padding-top:28px;
+    padding-bottom:20px;
   }
-  .header .nav{
-    display:inline-flex;
-    align-items:center;
+  section.section:nth-of-type(4){
+    padding-top:18px;
+    padding-bottom:28px;
+  }
+  .metrics{
     gap:12px;
-    flex-wrap:nowrap;
-    width:max-content;
   }
-  .header .nav .brand,
-  .header .nav .menu{
-    flex:0 0 auto;
-  }
-  .header .nav .menu{
-    display:inline-flex;
-    flex-wrap:nowrap;
-  }
-  .header .nav::-webkit-scrollbar{
-    display:none;
+  .roles{
+    gap:12px;
   }
 }
