@@ -335,7 +335,7 @@ input:focus, textarea:focus{ border-color:rgba(255,117,31,.7); box-shadow:0 0 0 
 /* === v27 Mobile tidy header & footer === */
 @media (max-width: 700px){
   /* Header: single-line, horizontally scrollable if needed */
-  header nav, .site-nav, .topnav, .main-nav, .navbar {
+  .site-nav, .topnav, .main-nav, .navbar {
     display: flex;
     align-items: center;
     gap: 12px;
