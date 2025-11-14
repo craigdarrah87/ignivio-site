@@ -615,3 +615,28 @@ footer .copyright{ color:#a8a8a8; font-size:12px }
     gap:10px;
   }
 }
+
+
+/* === v34 Mobile hero: ensure text + CTAs fit on first view === */
+@media (max-width: 720px){
+  .hero{
+    min-height:82vh; /* slightly shorter hero on mobile */
+  }
+  .hero-inner{
+    padding-top:56px;
+    padding-bottom:32px;
+  }
+  .hero h1{
+    font-size:2rem;      /* smaller headline */
+    line-height:1.05;
+    margin-bottom:0.6rem;
+  }
+  .hero p{
+    font-size:0.95rem;   /* slightly smaller body */
+    line-height:1.4;
+    margin-bottom:0.7rem;
+  }
+  .hero .hero-btns{
+    margin-top:8px;
+  }
+}
